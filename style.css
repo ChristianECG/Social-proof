@@ -1,0 +1,186 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-size: 62.5%;
+    font-family: 'Spartan', sans-serif;
+}
+
+main {
+    width: 80%;
+    font-size: 1.5em;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5rem;
+    margin-bottom: 2rem;
+}
+
+#title {
+    width: 90%;
+    text-align: center;
+    color: hsl(300, 43%, 22%);
+    line-height: 1em;
+    font-weight: 700;
+    margin: 0 auto;
+}
+
+#subtitle {
+    color: hsl(303, 10%, 53%);
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    text-align: center;
+    font-weight: 500;
+    font-size: 0.8rem;
+}
+
+.rate {
+    background-color: hsl(300, 24%, 96%);
+    font-size: 0.8rem;
+    color: hsl(300, 43%, 22%);
+    font-weight: 700;
+    padding: 1.5rem 0.5rem;
+    text-align: center;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 0.5rem;
+}
+
+.opinion {
+    background-color: hsl(300, 43%, 22%);
+    color: hsl(0, 0%, 100%);
+    padding: 2rem;
+    display: grid;
+    gap: 0.5rem;
+    column-gap: 2rem;
+    grid-template-columns: 2rem auto;
+    grid-template-areas:
+        'image name'
+        'image description'
+        'message message';
+    font-size: 0.85em;
+    border-radius: 0.5rem;
+    margin: 2rem 0;
+}
+
+.opinion .image {
+    width: 2.5rem;
+    height: 2.5rem;
+    grid-area: image;
+}
+
+.opinion img {
+    width: 100%;
+    height: 100%;
+    border-radius: 100%;
+}
+
+.opinion .name {
+    grid-area: name;
+    font-weight: 700;
+}
+
+.opinion .description {
+    grid-area: description;
+    line-height: 0;
+    color: hsl(333, 80%, 67%);
+}
+
+.opinion .message {
+    padding-top: 0.5rem;
+    grid-area: message;
+    line-height: 1.3rem;
+    font-weight: 500;
+}
+
+.attribution {
+    font-size: 11px;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.attribution a {
+    color: hsl(228, 45%, 44%);
+}
+
+@media screen and (min-width: 700px) {
+    main {
+        display: grid;
+        grid-template-columns: 50% 50%;
+        grid-template-rows: 3rem auto auto;
+        grid-template-areas:
+            'title rates'
+            'subtitle rates'
+            'opinions opinions';
+    }
+
+    #title {
+        grid-area: title;
+        width: 65%;
+        text-align: left;
+        margin: 0;
+    }
+
+    #subtitle {
+        grid-area: subtitle;
+        text-align: left;
+        margin: 0;
+        line-height: 1.5rem;
+        width: 65%;
+    }
+
+    #rates {
+        grid-area: rates;
+    }
+
+    #opinions {
+        grid-area: opinions;
+        display: flex;
+        column-gap: 2rem;
+    }
+}
+
+@media screen and (min-width: 1300px) {
+    .rate {
+        text-align: left;
+    }
+
+    .rate br {
+        display: none;
+    }
+
+    .rate img:first-child {
+        padding-left: 10px;
+    }
+
+    .rate img:nth-of-type(5) {
+        padding-right: 50px;
+    }
+
+    .rate:nth-of-type(1) {
+        margin-right: 100px;
+    }
+
+    .rate:nth-of-type(2) {
+        margin-left: 50px;
+        margin-right: 50px;
+    }
+
+    .rate:nth-of-type(3) {
+        margin-left: 100px;
+    }
+
+    .opinion:nth-of-type(1) {
+        margin-bottom: 100px;
+    }
+
+    .opinion:nth-of-type(2) {
+        margin-top: 70px;
+        margin-bottom: 70px;
+    }
+
+    .opinion:nth-of-type(3) {
+        margin-top: 100px;
+    }
+}
